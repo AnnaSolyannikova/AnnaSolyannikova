@@ -1,0 +1,357 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body{
+    background-color: dimgray;
+}
+html,body{
+    scroll-behavior: smooth;
+}
+h3{
+    margin: 20px auto;
+    color:dimgray;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+}
+.box3{
+    margin: 10px auto;
+    color:dimgray;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    background-color:lightyellow;
+    padding: 20px;
+    border: 8px dashed black;
+    text-align: justify;
+}
+h2{color:black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.content1{
+    width: 800px;
+}
+.content2{
+    width: 1000px;
+}
+.content3{
+    width: 1200px;
+    height: 300px;
+    overflow: auto scroll;
+    box-sizing: content-box;
+    -ms-overflow: auto scroll;
+}
+.caption{
+    color:yellow;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+}
+.subtitle{
+    font-size: 24px;
+    font-weight: 100;
+} 
+.content3>div>p{
+    background-color: yellow;
+    color:black;
+    font-size: 22px;
+    font-weight:500;
+    line-height: 24px;
+}
+.images>div{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    
+}
+.images>div>div{
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    left:0;
+    top:50%;
+    margin-top: -30px;
+    text-align: center;
+    font-size: 50px;
+    color: black;
+}
+.images{
+    text-align: center;
+}
+.down{
+    position: sticky;
+    bottom: 15px;
+    background: yellow;
+    left: 15px;
+    font-size: 20px;
+    padding: 15px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.menu{
+    position: fixed;
+    width: 200px;
+    left:0;
+    top:50%;
+    margin-top: -261px;
+    background-color: yellow;
+    font-weight: 600;
+    border: 2px dashed black;
+    font-size: 28px;
+    color: black;
+    padding: 5px;
+}
+.menu>div{
+    margin: 0;
+    border-top: 2px solid black;
+    font-size: 24px;
+}
+.menu>div>div{
+    font-size: 20px;
+    border-top: 2px dashed black;
+}
+.box{
+     margin: 10px auto;
+     width: 1200px;
+     background: burlywood;
+     text-align: justify; 
+     font-size:35px;      
+}
+.box .cell400{
+    width: 400px;
+    display: table-cell;
+}
+.box .cell800{
+    width: 800px;
+    display: table-cell;
+}
+.in_b{
+    font-size: 0;
+}  
+.block1{
+    font-size: 40px;
+    width: 400px;
+    display: inline-block;
+} 
+.block2{
+    font-size: 40px;
+    width: 800px;
+    display: inline-block;
+}         
+.box div{
+    outline: 2px solid black;              
+}
+.box2 div{
+    outline: 2px solid black;
+}   
+.flex{
+    display: flex;
+}
+.flex400{
+    flex: 0 1 400px;
+}
+.flex800{
+    flex: 0 1 800px;
+}
+.fl400{
+    width: 400px;
+    float: left
+}
+.fl800{
+    width: 800px;
+    float: left;
+}
+.clr{
+    clear: left
+}
+.float:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.float2:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid2{
+    display: grid;
+    grid-template-columns: 800px auto;
+}
+.grid3{
+    display: grid;
+    grid-template-columns: 400px auto;
+}
+.box2{
+    margin: 10px auto;
+    width: 1200px;
+    background: rgb(57, 238, 78);
+    text-align: center;
+    font-size: 40px; 
+    display: grid;
+    grid-template-areas:
+    "A B C"
+    "D D E"
+    "D D E"
+    "D D F"
+    "G G F"
+    "G G H"
+    "G G H"
+    "I J J"
+    "I K L"
+    "M M N"
+    "P R N"
+    "Q R N"; 
+}
+.grid-a{
+    grid-area: A;
+}
+.grid-b{
+    grid-area: B;
+}
+.grid-c{
+    grid-area: C;
+}
+.grid-d{
+    grid-area: D;
+}
+.grid-g{
+    grid-area: G;
+}
+.grid-e{
+    grid-area: E;
+}.grid-f{
+    grid-area: F;
+}.grid-h{
+    grid-area: H;
+}
+.grid-i{
+    grid-area: I;
+}
+.grid-j{
+    grid-area: J;
+}
+.grid-k{
+    grid-area: K;
+}
+.grid-l{
+    grid-area: L;
+}
+.grid-m{
+    grid-area: M;
+}
+.grid-n{
+    grid-area: N;
+}
+.grid-p{
+    grid-area: P;
+}
+.grid-r{
+    grid-area: R;
+}
+.grid-q{
+    grid-area: Q;
+}
+ul{
+    text-align: center;
+    font-size: 0;
+    position: relative;
+    z-index: 5;
+}
+ul li{
+    display: inline-block;
+    font-size: 30px;
+    position: relative;
+    background-color: black;
+}
+ul li a{ 
+    color: yellow;
+    display: block;
+    padding: 25px 20px;
+}
+ul li:hover {
+    background-color: brown;
+}
+.mLv1{
+    position: absolute;  
+    top:100%;
+    left:0;
+    display: none
+}
+.mLv1>li{
+    display: block;
+}
+ul li:hover ul{
+    display: block;
+}
+.mLv3{
+    position: absolute;
+    top: 0;
+    left:100%;
+}
+.mLv4{
+    position: absolute;
+    bottom:0;
+    right:100%;
+}
+.mLv5{
+    display: none;
+}
+.mLv2:hover .mLv5{
+    display: block;
+}
