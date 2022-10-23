@@ -61,7 +61,7 @@ h3{
     text-align: left;
 }
 .box3{
-    margin: 10px auto;
+    margin: 0 auto 10px;
     color:dimgray;
     font-size: 18px;
     font-weight: 400;
@@ -78,6 +78,8 @@ h2{color:black;
 }
 .content1{
     width: 800px;
+    position: relative;
+    z-index: 5;
 }
 .content2{
     width: 1000px;
@@ -166,7 +168,9 @@ a{
      width: 1200px;
      background: burlywood;
      text-align: justify; 
-     font-size:35px;      
+     font-size:50px; 
+     position: relative;
+     z-index: 5;     
 }
 .box .cell400{
     width: 400px;
@@ -238,11 +242,13 @@ a{
     grid-template-columns: 400px auto;
 }
 .box2{
+    position: relative;
+    z-index: 5;
     margin: 10px auto;
     width: 1200px;
     background: rgb(57, 238, 78);
     text-align: center;
-    font-size: 40px; 
+    font-size: 60px; 
     display: grid;
     grid-template-areas:
     "A B C"
@@ -309,64 +315,81 @@ a{
 }
 
 
+
+
+
 .headmenu{
     text-align: center;
     font-size: 0;
     position: relative;
-    z-index: 5;
+    transition: all .5s ease-in;
 }
 .headmenu li{
     display: inline-block;
     font-size: 30px;
     position: relative;
     background-color: black;
+    transition: all .5s ease-in;
+}
+.ml1>li{
+    display: block;
+    transition: all .5s ease-in;
+}
+.headmenu>li>ul{
+    width: 0;
+    transition: all .5s ease-in-out;
+}
+.headmenu>li:hover>ul{
+    width: 100%;
 }
 .headmenu li a{ 
     color: yellow;
     display: block;
     position: relative;
+    padding: 35px 10px 20px 80px;
 }
 .headmenu li:hover {
     background-color: lightcoral;
+    z-index: 10;
+    margin: 5px;
 }
-.ml1 {
+.ml1{
     position: absolute;
     top:100%;
     left:0;
-    height: 0;
-    overflow: hidden;
-    transition: all 3s ease-in-out;
-}
-.headmenu ul li {
-    display: block;
+    transition: all .5s ease-in;
 }
 .ml2{
     position: absolute;
     top:0;
     left:100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease-in-out;
+}
+.ml1>li:hover .ml2{
+    pointer-events: all;
+    opacity: 1;  
 }
 .ml3{
     position: absolute;
-    bottom:0;
+    bottom: 0;
     right: 100%;
 }
-ul li:hover .ml1{
-    height: 460px;
+.ml1 li+li+li+li+li>ul{
+    overflow: hidden;
+    height: 0;
+    transition: all .5s ease-in-out;
 }
-ul li .ml1:hover .ml2{
-    height: 460px;
-}
-.start-img a{
-    padding: 35px 10px 20px 80px;
-}
-.finish-img a{
-    padding: 35px 80px 20px 88px;
+.ml1 li+li+li+li+li:hover ul{
+    overflow: visible;
+    height: 100%;
+    bottom:171%;
 }
 .ml1 a{
     padding: 25px 80px;
-    position: relative;
 }
-.start-img:before{
+.headmenu>li:before{
     content: "";
     width: 80px;
     height: 80px;
@@ -375,88 +398,155 @@ ul li .ml1:hover .ml2{
     left: 0;
     top:0;
 }
-.start-img:hover:before{
+.headmenu>li:hover:before{
     background-position: -110px -110px;
 }
-.headmenu .start-img+li:before{
-    background: url('../images/css_sprites.png') -210px -10px;
+.headmenu>li+li:before{
+    background-position: -210px -10px;
 }
-.headmenu .start-img+li:hover:before{
+.headmenu>li+li:hover:before{
     background-position: -110px -210px;
 }
-.ml1 .finish-img:after{
-    content: "";
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    background-position: -210px -110px;
+.headmenu>li+li+li:before{
+    background-position: -10px -110px;
     right:0;
     top:0;
+    left: auto;
 }
-.finish-img:hover::after{
+.headmenu>li+li+li:hover:before{
     background-position: -10px -10px;
 }
-.ml1 .finish-img:hover:after{
-    background-position: -10px -210px;
+.headmenu>li+li+li>a{
+    padding:35px 80px 20px 88px;
 }
-.finish-img:after{
+.ml1>li a{
+    padding:35px 80px 20px;
+}
+.ml1>li:nth-child(3):before{
     content: "";
     width: 80px;
     height: 80px;
     position: absolute;
-    background: url('../images/css_sprites.png') -10px -110px;
-    right:0;
+    background: url('../images/css_sprites.png') -210px -110px;
+    right: 0;
+    top: 0;
+}
+.ml1>li:nth-child(3):hover:before{
+    background-position: -10px -210px;
+}
+.ml1>li:nth-child(5):before{
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background: url('../images/css_sprites.png') -10px -210px;
+    left: 0;
     top:0;
 }
-.ml1 .start-img:before{
-    content: "";
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    background-position: -10px -210px;
-    right:0;
-    top:0
-}
-.ml1 .start-img:hover:before{
+.ml1>li:nth-child(5):hover:before{
     background-position: -210px -110px;
 }
 .socmenu{
-    position: sticky;
-    bottom:10px;
-    left: 0;
-    text-align: left;
+    position: fixed;
     font-size: 0;
+    z-index: 10;
+    width: 200px;
+    height: 170px;
+    top:50%;
+    right:0%;
+    transform: translate(100%, -50%);
+    transition: all 2s ease-in-out;
+}
+.socmenu:hover:before{
+    left:-20%;
+    top:50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background: black;
+    color: yellow;
+    animation-play-state: paused;
+}
+.socmenu:hover{
+    top:50%;
+    right:0%;
+    transform: translate(0%, -50%) rotate(3turn);
+    background: black;
+}
+.socmenu:before{
+    content: "HOVER ME";
+    font-size: 38px;
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    background: yellow;
+    left:-20%;
+    top:50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transition: all 4s ease-in-out;
+    animation:hoverme 2s linear 3 2s forwards;
+}
+@keyframes hoverme{
+    0%{
+    padding: 0;
+    }
+    50%{
+    padding: 40px;
+    background: red;
+    }
+    100%{
+    padding: 20px;
+    border: 10px solid black;
+    }
 }
 .socmenu li{
-    background: yellow;
     display: inline-block;
+    margin: 0 65px;
+}
+.socmenu li+li{
+    margin: -20px 15px;
+}
+.socmenu li+li+li+li{
+    margin: -20px 65px;
 }
 .socmenu li a{
+    transform: rotate(45deg);
     display: block;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    position: relative;
+    outline: 1px solid black;
+    background: yellow;
+    overflow: hidden;
+}
+.socmenu li a:before{
+    content: "";
     width: 50px;
     height: 50px;
-    padding: 0;
     background: url('../images/css_sprites.png') -310px -220px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top:13%;
+    left:13%;  
 }
-.socmenu li+li a{
+.socmenu li+li a:before{
     background-position: -80px -310px;
 }
-.socmenu li+li+li a{
+.socmenu li+li+li a:before{
     background-position: -310px -80px;
 }
-.socmenu li+li+li+li a{
+.socmenu li+li+li+li a:before{
     background-position: -210px -210px;
 }
-.socmenu li a:hover{
+.socmenu li:hover a:before{
     background-position: -10px -310px;
-    background-color: yellow;
 }
-.socmenu li+li a:hover{
+.socmenu li+li:hover a:before{
     background-position: -150px -310px;
 }
-.socmenu li+li+li a:hover{
+.socmenu li+li+li:hover a:before{
     background-position:-310px -10px;
 }
-.socmenu li+li+li+li a:hover{
+.socmenu li+li+li+li:hover a:before{
     background-position: -310px -150px;
 }
+
