@@ -461,7 +461,7 @@ a{
 .socmenu:hover:before{
     left:-20%;
     top:50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%);
     background: black;
     color: yellow;
     animation-play-state: paused;
@@ -780,8 +780,104 @@ a{
 }
 
 
+form{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 250px;
+    height: 100px;
+    background: linear-gradient(orange, yellow, green);
+}
+select{
+    width: 100px;
+    height: 30px;
+    margin: 30px 30px;
+    position: relative;
+}
+.firstform:before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top:30px;
+    right: 119px;
+    background: pink;
+    z-index: 5;
+    pointer-events: none;
+}
+.firstform:after{
+    content: "";
+    position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 28px solid red;
+    z-index: 5;
+    top: 30px;
+    right: 119px;
+    pointer-events: none;
+}
+input{
+    margin: 30px;
+    height: 30px;
+}
+form+form{
+    height: 200px;
+    top:100px;
+    left:0;
+}
+.secondform{
+    -webkit-appearance: none;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.secondform::before{
+    content: "+";
+	position: absolute;
+	top: 32px;
+	left: 182px;
+	bottom: 1px;
+	width: 20px;
+	height: 15px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+}
+.secondform:after{
+    content: "-";
+	position: absolute;
+	top: 42px;
+	left: 182px;
+	bottom: 1px;
+	width: 20px;
+	height: 15px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+}
+input[type="text"]{
+    height: 50px;
+}
 
-
+input::placeholder {
+    color: green;
+    position: absolute;
+    top:20px;
+    left:0;
+}
+input:hover::placeholder {
+    top:5px;
+    left:0;
+}
 
 
 
