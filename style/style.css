@@ -461,7 +461,7 @@ a{
 .socmenu:hover:before{
     left:-20%;
     top:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(-90deg);
     background: black;
     color: yellow;
     animation-play-state: paused;
@@ -823,7 +823,7 @@ input{
     height: 30px;
 }
 form+form{
-    height: 200px;
+    height: 300px;
     top:100px;
     left:0;
 }
@@ -878,6 +878,61 @@ input:hover::placeholder {
     top:5px;
     left:0;
 }
+.checkform{
+    margin: 30px 30px;
+    height: 30px;
+    width: 60px;
+    background: yellow;
+    position: relative;
+    border-radius: 40%;
+    border: 5px solid red;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+label{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 30px;
+    height: 30px;
+
+}
+label+label{
+    position: absolute;
+    top:0;
+    left:30px;
+    height: 30px;
+}
+label:before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 40%;
+    position: absolute;
+    top:0;
+    left:0; 
+}
+label+label:before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    border-radius: 40%;
+    position: absolute;
+    top:0;
+    left:0; 
+}
+input[type="checkbox"]:checked+label::before{
+    background-color: yellow;
+}
+input[type="checkbox"]:checked+label+label::before{
+    background-color: red;
+}
+
+
 
 
 
